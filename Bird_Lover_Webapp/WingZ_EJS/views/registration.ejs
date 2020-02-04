@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Wingz Registration and Sign in</title>
+    <style>
+        body {
+            background: #CCCCFF;
+            color: #404080;
+            font-family: Athelas, sans-serif;
+        }
+
+        h1 {
+            margin-top: 3%;
+            padding: 5px;
+            text-align: center;
+        }
+
+        p.intro {
+            max-width: 50%;
+            text-align: center;
+            margin: auto;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 2%;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Wingz Registration</h1>
+
+<p class=intro>
+    Welcome to Wingz, the premium bird reporting and bird watching experience. In order to begin using all the wonderful
+    features of this app please tell us who you are so you can join this awesome community of fellow bird watchers.
+</p>
+
+<form action="\registration\signup" method='post' onkeyup="">
+
+    <div class="input-field">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" placeholder="John Doe">
+    </div>
+
+    <br>
+
+    <br>
+
+    <div class="input-field">
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" placeholder="John.Doe@gmail.com">
+    </div>
+
+    <br>
+
+
+    <div class="input-field">
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username">
+    </div>
+
+    <br>
+
+    <div class="input-field">
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password">
+    </div>
+
+    <br>
+
+    <div class="input-field">
+        <label for="cPassword">Confirm password</label>
+        <input type="password" id="cPassword" name="cPassword">
+    </div>
+
+    <br>
+
+    <div class="input-field">
+        <label for="university">University: </label>
+        <input type="text" id="university" name="university">
+    </div>
+
+    <br>
+
+    <div class="input-field">
+        <label for="favoriteBird">Favorite Bird: </label>
+        <input type="text" id="favoriteBird" name="favoriteBird">
+    </div>
+
+    <br>
+
+    <input type="submit" value="Submit Registration" class="btn btn-primary btn-block">
+</form>
+</body>
+</html>

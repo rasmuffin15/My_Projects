@@ -1,0 +1,7 @@
+﻿My Store
+
+
+Inventory:
+Oranges,3.000000,9
+Apples,5.000000,3
+Bananas,17.000000,24

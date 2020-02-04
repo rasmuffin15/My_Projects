@@ -1,0 +1,119 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background: #CCCCFF;
+            color: #404080;
+            font-family: Athelas;
+        }
+
+        .container {
+            max-width: 50%;
+            background: whitesmoke;
+
+        }
+
+        ul {
+            background-color: #404080;
+        }
+
+        .navbar {
+            background: #404080;
+        }
+
+        li a {
+            color: whitesmoke;
+        }
+
+        li a:hover {
+            color: #CCCCFF;
+            text-decoration: underline;
+
+        }
+
+        .jumbotron button {
+            height: 50px;
+            width: 160px;
+            padding: 5px;
+            background: #CCCCFF;
+            color: #404080;
+            font-size: 25px;
+            border-color: #404080;
+            border-width: 1.5px;
+
+        }
+
+        #Fatcs {
+            width: 130px;
+        }
+
+        .jumbotron {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+        }
+
+        .jumbotron h2 {
+            margin-left: 3%;
+
+        }
+
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="birdFeed">Feed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="birdFacts">Bird Facts <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="birdReporting">Bird Reporting</a>
+            </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+            <a class="nav-link" href="">
+                <form action="/signin" method='get'>
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Logout</button>
+                </form>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center">
+    <a href="birdFacts">
+        <button class="btn btn-outline-dark my-2 my-sm-0" id="Fatcs">Bird Facts</button>
+    </a>
+    <h2 class="display-4">Bird Feed</h2>
+    <a href="birdReporting">
+        <button class="btn btn-outline-dark my-2 my-sm-0" id="newReport">Report Bird</button>
+    </a>
+</div>
+
+
+
+<%
+    var card = "";
+    queryData.forEach(function(element){
+        console.log(element);
+        card += "<div class = \"text-left\">Bird: "+element.common_name+"<\div>";
+        card += "<div class = \"text-left\">Seen By: "+element.name+"<\div>";
+        card += "<div class = \"text-left\">Location: "+element.location+"<\div>";
+        card += "<br>"
+    });
+%>
+<div class="container" id="feed"><%- card%></div>
+
+</body>

@@ -1,0 +1,31 @@
+Trail One
+--Number for Requester Threads = 1
+--Number for Resolver Threads = 1
+--Total run time: 43 seconds
+
+Trail Two
+--Number for Requester Threads = 1
+--Number for Resolver Threads = 3
+--Total run time: 22 seconds
+
+Trail Three
+--Number for Requester Threads = 3
+--Number for Resolver Threads = 1
+--Total run time: 38 seconds
+
+Trail Four
+--Number for Requester Threads = 3
+--Number for Resolver Threads = 3
+--Total run time: 24 seconds
+
+Trail Five
+--Number for Requester Threads = 5
+--Number for Resolver Threads = 5
+--Total run time: 20 seconds
+
+Trail Six
+--Number for Requester Threads = 8
+--Number for Resolver Threads = 5
+--Total run time: 21 seconds
+
+The run time of this program is mainly determined by the dns lookup fuction. This function takes much more time to execute than the rest of the program. A way to speed up this part of the program is to have more resolver threads than less. This is why we see a speed up in trail four from trail three. Because the requester threads only have to read from a file and write to a queue, its portion of code that it must execute does not take very long. This is why there is a significant speed in trail two from trail one. Finally because the dns lookup function searches the internet, interet speeds play a role in the run time of this program.

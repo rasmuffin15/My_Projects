@@ -1,0 +1,44 @@
+Thomas Rasmussen
+CSCI 4273
+Programming Assignment 4
+
+COMPILE!!!!!!!!
+
+1) Open terminal window in directory where client and server files are located
+2) Type 'make all' to compile client and server program
+3) Follow steps below to run client and server program
+
+
+RUN THE SERVERS!!!!!!!!!
+
+To run servers open up a terminal window in the directory where
+'dfs.c', 'start_servers.sh', and 'stop_servers.sh' are stored. Type
+'./start_servers'. This is a script used to start each of the 4 servers
+with one command.
+
+
+RUN THE CLIENT!!!!!!!!!!
+
+To run client open up a terminal window in the directory where 
+'dfc.c' is stored. Type './dfc dfc.conf' to run client program.
+You will be presented with 4 different menu options: 'list', 'get',
+'put', and 'exit'. Each command is broken down below.
+
+
+COMMANDS!!!!!!!!
+
+Command list:
+--type 'list' to execute
+--Will display the files that are stored on the servers and if the servers returned each of the 4 fragments
+
+Command get:
+--type 'get {filename}' to execute
+--File must be in working directory and will get that file from the file servers and store it in the current working directory
+
+Command put:
+--type 'put {filename}' to execute
+--File must be in working directory and will store that file on the file servers
+
+Command exit:
+--type 'exit' to execute
+--Will exit the client program

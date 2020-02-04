@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Bird Facts!!</title>
+
+    <link rel='icon' href='../resources/img/favicon.ico' type='image/x-icon'/>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        body{
+            color: #404080;
+            background: #CCCCFF;
+            font-family: Athelas, sans-serif;
+        }
+        .custom-select {
+            color: white;
+            background: #404080 url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right;
+            background-size: 25px 25px,
+            25px 25px;;
+        }
+        .navbar{
+            background: #404080;
+        }
+        ul{
+            background: #404080;
+        }
+        li a{
+            color: white;
+        }
+        li a:hover{
+            color: #CCCCFF;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/signin/birdFeed">Feed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signin/birdFacts">Bird Facts <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signin/birdReporting">Bird Reporting</a>
+            </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+            <a class="nav-link" href="">
+                <form action="../signin" method='get'>
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Logout</button>
+                </form>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="card-body mx-auto">
+    <form class="form" action="/signin/birdFacts/birdInfo" method="get">
+        <select class="custom-select" name="fact_choice" onchange="this.form.submit()">
+            <option selected>Select Bird</option>
+            <% if(birds) {
+                var bird_options = '';
+                birds.forEach(function(item) {
+                    bird_options += '<option value="' + item.common_name + '">' + item.common_name  +'</option>';
+                });%>
+            <%-bird_options%>
+            <%}%>
+        </select>
+    </form>
+</div>
+
+<div class="col-8">
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>Type</th>
+                <td>
+                    <% if(bird_info) { %>
+                        <%- bird_info.common_name %>
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>
+                    <% if(bird_info) { %>
+                        <img class="card-img-top" id="bird_img" src="<%- bird_info.bird_image %>" alt="BIRD IMAGE">
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <% if(bird_info) { %>
+                        <%- bird_info.bird_description %>
+                    <% } %>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

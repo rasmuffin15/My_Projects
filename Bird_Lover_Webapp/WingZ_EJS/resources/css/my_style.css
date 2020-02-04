@@ -1,0 +1,22 @@
+/* Add any css you want to use for you website here */
+
+.background_image {
+	background-image: url('/resources/img/flock.jpg');
+  	height: 500px;
+  	width: "100%";
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	position: relative;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: blue;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #CCCCFF;
+            color: #404080;
+            font-family: Athelas;
+        }
+
+        .navbar {
+            background: #404080;
+        }
+
+        ul {
+            background: #404080;
+        }
+
+        li a {
+            color: white;
+        }
+
+        li a:hover {
+            color: #CCCCFF;
+            text-decoration: underline;
+
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="birdFeed">Feed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="birdFacts">Bird Facts <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="birdReporting">Bird Reporting</a>
+            </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+            <form action = "/" method = 'get'>
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Logout </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center">
+    <h2 class="display-4">Bird Report</h2>
+</div>
+<blockquote class="blockquote text-center">This is where you can report a bird you have seen. Have you seen a bird
+    today?
+</blockquote>
+
+<form action="/signin/birdReporting" method="post">
+    <h3 class="text-center">What Type of Bird is it?</h3>
+    <p class="text-center">If you are not sure what type of bird it is, check out our Bird Facts Page!</p>
+    <div align="center">
+
+
+        <select name="birdSel">
+            <%
+            var card = "";
+            queryData.forEach(function(element){
+                console.log(element);
+                card += "<option value="+element.bird_id+">"+element.common_name+"</option>";
+                card += "<br>"
+            });
+            %>
+            <%- card%>
+        </select>
+    </div>
+
+    <br>
+
+    <h3 class="text-center">Where did you see it?</h3>
+
+
+    <div class="text-center">Location:</div>
+    <div align="center">
+        <br>
+        <input type="text" name="Location"> <!-- Right now it is just text field, could change to use gps location. -->
+        <br>
+        <div>
+            Other information:<br>
+            (i.e is it in a tree, did it fly overhead, is it sleeping)<br>
+        </div>
+        <input type="text" name="Other">
+
+        <br><br>
+
+
+        <input type="submit">
+    </div>
+</form>
+
+</body>
+</html>

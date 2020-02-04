@@ -1,0 +1,4 @@
+build:
+  ci:
+    - make unittest
+	- make shop

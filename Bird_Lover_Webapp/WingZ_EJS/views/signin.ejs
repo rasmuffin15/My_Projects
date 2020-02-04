@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wingz Signin</title>
+    <style>
+        body{
+            text-align: center;
+            background: #CCCCFF;
+            color: #404080;
+            font-family: Athelas;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<h1>Welcome to Wingz</h1>
+
+<h3>The world's premiere Bird Watching Community</h3>
+
+<form action="/signin/login" method="post">
+    <div class="form-group row">
+        <label for="usernamefield">Username: </label>
+        <input type="text" id="usernamefield" name="usernamefield" placeholder="Username Goes here">
+    </div>
+
+    <br>
+
+    <div class="form-group row">
+        <label for="passwordfield">Password: </label>
+        <input type="password" id="passwordfield" name="passwordfield" placeholder="Password">
+    </div>
+
+    <br>
+
+    If you have not registered yet, please make an account <br/>
+    to become a part of this wonderful bird-loving
+    community!</p>
+    <p> to make an account please <a href="registration">Click Here</a></p>
+
+    <button type="submit" class="btn btn-primary btn-block" id="submit_block">Login</button>
+
+</form>
+
+<% include ../partials/footer %>
