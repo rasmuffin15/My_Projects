@@ -1,0 +1,10 @@
+Car, Volkswagen, Jetta, Compact Sedan, Front-wheel, 2013
+Car, Subaru, Legacy, Mid-size, All-wheel, 2017
+Car, Acura, ILX, Compact, Front-wheel, 2016
+Truck, Toyota, Tacoma, Mid-size, Rear-wheel, 2006
+Car, Ford, Mustang, Sport, Rear-wheel, 2015
+Truck, GMC, Canyon, Mid-size, All-wheel, 2017
+Suv, Toyota, 4Runner, Sport Utility, All-wheel, 2019
+Car, Acura, TSX, Luxury, Front-wheel, 2008
+Car, Lexus, LFA, Luxury, Rear-wheel, 2020
+Truck, Chevy, Silverado, Full-size, Rear-wheel, 2012
